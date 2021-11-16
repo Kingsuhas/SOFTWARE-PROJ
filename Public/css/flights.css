@@ -1,0 +1,325 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  height: fit-content;
+  background-color: #f5f6f7;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  width: 80%;
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+  font-size: 1.5rem;
+  color: #2d3d41;
+  margin-left: 10rem;
+}
+
+.container > h1 {
+  padding-bottom: 2rem;
+  color: #383636;
+  border-bottom: 1px solid rgba(163, 163, 163, 0.3);
+  margin-bottom: 4rem;
+}
+
+.card {
+  position: relative;
+  /* z-index: 10; */
+  width: 100%;
+  height: 12rem;
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: scale(1.02);
+}
+
+.book {
+  position: absolute;
+  height: 100%;
+  top: 50%;
+  right: -5%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #5e60ce;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem 1.5rem;
+  transition: 0.3s ease;
+  cursor: pointer;
+  outline: none;
+  font-weight: 700;
+  /* transition-delay: 0.1s; */
+}
+
+.confirm-booking {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+.booked {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  transition: 0.3s ease;
+  font-size: 3rem;
+  color: #fff;
+  animation: booked 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.error {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.error a {
+  text-decoration: none;
+  font-size: 2.5rem;
+  padding-left: 1rem;
+}
+
+@keyframes booked {
+  50% {
+    transform: translateY(4rem);
+  }
+  100% {
+    transform: translateY(3rem);
+  }
+}
+
+.confirm-header {
+  margin-right: 1rem;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.confirm-button,
+.cancel-button {
+  color: #fff;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  border: 1px solid #fff;
+  border-radius: 0.5rem;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin: 1rem;
+  transition: 0.2s ease;
+}
+
+.cancel-button:hover {
+  color: #ff4949;
+  background-color: rgb(255, 255, 255);
+}
+
+.confirm-button:hover {
+  color: rgb(1, 173, 1);
+  background-color: #fff;
+}
+
+.card .card-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 85%;
+}
+
+.card-details div,
+.flight-id {
+  width: 15%;
+  height: 100%;
+  border: none;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.flight-id i {
+  transform: rotate(-45deg);
+  padding: 0.5rem;
+  color: rgb(183, 200, 209);
+}
+
+.flight-details {
+  flex-direction: column;
+}
+
+.flight-details {
+  /* padding: 1rem; */
+  position: relative;
+}
+
+.details {
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #4ea8de;
+  position: absolute;
+  bottom: 0;
+}
+
+.timings p {
+  padding: 1rem;
+}
+
+.popup-timings {
+  display: flex;
+  flex-direction: row;
+}
+
+.popup-direction {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-tag {
+  width: 15%;
+  text-align: center;
+}
+
+.card-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 1000;
+  width: 50%;
+  height: 50%;
+  /* border: 2px solid blue; */
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  /* padding: 3rem 4rem; */
+  /* visibility: hidden; */
+}
+
+.popup-details {
+  overflow-y: scroll;
+}
+
+.from,
+.to {
+  margin-right: 0 1rem;
+  text-transform: capitalize;
+}
+
+.flight-popup-details {
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  font-weight: 600;
+  opacity: 0.8;
+  color: #666666;
+  margin: 2rem 3rem;
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: all;
+}
+
+.baggage-popup-details {
+  margin: 2rem 3rem;
+}
+
+.flight-popup-timings {
+  display: flex;
+  flex-direction: column;
+}
+.flight-popup-timings div {
+  margin-bottom: 1rem;
+}
+.baggage-info {
+  line-height: 2;
+  padding: 0.5rem;
+  text-align: justify;
+}
+.popup-direction,
+.popup-price {
+  color: #000000;
+  font-weight: 600;
+}
+.popup-flight-id {
+  margin-left: 3.5rem;
+  /* Jugaad */
+}
+
+.close {
+  width: fit-content;
+  font-size: 5rem;
+  cursor: pointer;
+  padding: 0 2rem 1rem 0;
+  float: right;
+}
+
+.close:hover {
+  color: rgb(243, 65, 21);
+}
+
+.hide {
+  display: none;
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #5e60ce;
+}
