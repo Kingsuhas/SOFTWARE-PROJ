@@ -1,7 +1,7 @@
 $('.not-logged-in').hide();
 $('.loader-container').hide();
 
-const api = `https://software-proj-ks.herokuapp.com//paymentHistory`;
+const api = `https://software-proj-ks.herokuapp.com/paymentHistory`;
 
 const myHeaders = new Headers();
 myHeaders.append('Authorization', sessionStorage.getItem('authToken'));
